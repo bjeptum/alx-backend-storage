@@ -31,6 +31,10 @@ def nginx_log_stats():
                                                     "GET", "path": "/status"})
     print(f"\t{status_count} GET /status")
 
+    # Count status checks
+    total_status_checks = nginx_collection.count_documents({"path": "/status"})
+    print(f"\t{total_status_checks} status check")
+
 
 if __name__ == "__main__":
     nginx_log_stats()
