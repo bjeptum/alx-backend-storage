@@ -1,0 +1,4 @@
+// Use regex filter to fetch data
+db.school.find(
+	{ name: { $regex: "^Holberton" }}).
+	forEach(doc => printjson(doc))
